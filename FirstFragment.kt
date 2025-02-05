@@ -1,5 +1,6 @@
 package com.example.test
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -19,6 +20,9 @@ import java.net.DatagramSocket
 import java.net.InetAddress
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
+import java.lang.Math.toRadians
+import kotlin.math.cos
+import kotlin.math.sin
 
 class FirstFragment : Fragment() {
 
@@ -43,6 +47,7 @@ class FirstFragment : Fragment() {
     private val jobs = mutableMapOf<String, Job?>()
 
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -129,6 +134,86 @@ class FirstFragment : Fragment() {
             }
             true
         }
+        binding.btn5.setOnTouchListener { v, event ->
+
+            Log.i("EVENT",""+event.action)
+
+            when(event.action) {
+
+
+                MotionEvent.ACTION_DOWN -> {
+
+                    senddatawithloop("btn5")
+                }
+
+                MotionEvent.ACTION_UP -> {
+                    jobs["btn5"]?.cancel()
+                    jobs.remove("btn5")
+                    v.performClick()
+                }
+            }
+            true
+        }
+        binding.btn6.setOnTouchListener { v, event ->
+
+            Log.i("EVENT",""+event.action)
+
+            when(event.action) {
+
+
+                MotionEvent.ACTION_DOWN -> {
+
+                    senddatawithloop("btn6")
+                }
+
+                MotionEvent.ACTION_UP -> {
+                    jobs["btn6"]?.cancel()
+                    jobs.remove("btn6")
+                    v.performClick()
+                }
+            }
+            true
+        }
+        binding.btn7.setOnTouchListener { v, event ->
+
+            Log.i("EVENT",""+event.action)
+
+            when(event.action) {
+
+
+                MotionEvent.ACTION_DOWN -> {
+
+                    senddatawithloop("btn7")
+                }
+
+                MotionEvent.ACTION_UP -> {
+                    jobs["btn7"]?.cancel()
+                    jobs.remove("btn7")
+                    v.performClick()
+                }
+            }
+            true
+        }
+        binding.btn8.setOnTouchListener { v, event ->
+
+            Log.i("EVENT",""+event.action)
+
+            when(event.action) {
+
+
+                MotionEvent.ACTION_DOWN -> {
+
+                    senddatawithloop("btn8")
+                }
+
+                MotionEvent.ACTION_UP -> {
+                    jobs["btn8"]?.cancel()
+                    jobs.remove("btn8")
+                    v.performClick()
+                }
+            }
+            true
+        }
 
     }
 
@@ -150,34 +235,52 @@ class FirstFragment : Fragment() {
 
     suspend fun senddata(buttonname: String){
 
+        val yaw = toRadians(yw.toDouble()).toFloat()
+        val pi = toRadians(p.toDouble()).toFloat()
+
         when(buttonname) {
 
+            "btn5" -> {
+                p += 0.1f
+            }
+            "btn6" -> {
+                yw += 0.1f
+            }
+            "btn7" -> {
+                yw -= 0.1f
+            }
+            "btn8" -> {
+                p -= 0.1f
+            }
+
+
             "btn" -> {
-                x += 0.10f
-                y += 0.0f
-                z += 0.0f
+                x += 0.3f*cos(yaw)* cos(pi)
+                y += 0.3f*sin(yaw) * cos(pi)
+                z += 0.2f*sin(pi)
             }
             "btn2" -> {
-                x -= 00.0f
-                y += 0.10f
+                x -= 00.0f*sin(yaw)
+                y += 0.10f*cos(yaw)
 
             }
             "btn3" -> {
-                x += 00.0f
-                y -= 0.10f
+                x += 00.0f*sin(yaw)
+                y -= 0.10f*cos(yaw)
 
             }
             "btn4" -> {
-                x -= 0.10f
-                y -= 00.0f
-                z -= 00.0f
+                x -= 0.1f*cos(yaw)* cos(pi)
+                y -= 0.1f*sin(yaw) * cos(pi)
+                z -= 0.1f*sin(pi)
             }
+
         }
             Log.i("btn2", "x: $x, y: $y, z: $z")
 
             val randomValues = floatArrayOf(
-                x, y, z, 1f, 2f,
-                3f, 4f, 5f, 6f, 7f,
+                x, y, z, 0f, p,
+                yw, 4f, 5f, 6f, 7f,
                 8f, 9f, 1f, 2f, 3f,
                 4f, 5f, 6f, 7f, 8f
             )
