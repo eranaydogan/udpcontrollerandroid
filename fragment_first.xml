@@ -10,19 +10,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
-       <Button
+
+        <Button
             android:id="@+id/btn"
-            android:text="gönder"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_width="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"
+            android:text="gönder"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_height="wrap_content"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.183"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.385" />
+
         <Button
             android:id="@+id/btn2"
             android:text="ileri"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintStart_toEndOf="@id/btn"
             android:layout_width="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/btn"
@@ -30,18 +34,53 @@
         <Button
             android:id="@+id/btn3"
             android:text="geri"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             app:layout_constraintEnd_toStartOf="@id/btn"
             app:layout_constraintTop_toBottomOf="@id/btn"
             android:layout_height="wrap_content"/>
+
         <Button
             android:id="@+id/btn4"
-            android:text="geri"
-            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            android:text="geri"
             app:layout_constraintStart_toStartOf="@id/btn"
-            app:layout_constraintTop_toBottomOf="@id/btn3"
+            app:layout_constraintTop_toBottomOf="@id/btn3" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:text="geri"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/btn7"
+            app:layout_constraintTop_toTopOf="@id/btn"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn6"
+            android:text="geri"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/btn5"
+            app:layout_constraintTop_toBottomOf="@id/btn5"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn7"
+            android:text="geri"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="100dp"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/btn2"
+            app:layout_constraintTop_toBottomOf="@id/btn5"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn8"
+            android:text="geri"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/btn7"
+            app:layout_constraintTop_toBottomOf="@id/btn7"
             android:layout_height="wrap_content"/>
 
 
