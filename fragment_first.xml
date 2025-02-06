@@ -11,77 +11,102 @@
         android:layout_height="match_parent"
         android:padding="16dp">
 
-        <Button
+        <ImageButton
             android:id="@+id/btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="gönder"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.183"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.385" />
+            app:layout_constraintVertical_bias="0.385"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/arrowone"
+            android:background="#00000000"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/btn2"
-            android:text="ileri"
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toEndOf="@id/btn"
-            android:layout_width="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/btn"
-            android:layout_height="wrap_content"/>
-        <Button
+            android:rotation="90"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/arrowone"
+            android:background="#00000000"/>
+        <ImageButton
             android:id="@+id/btn3"
-            android:text="geri"
             android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
+            android:rotation="270"
             app:layout_constraintEnd_toStartOf="@id/btn"
             app:layout_constraintTop_toBottomOf="@id/btn"
-            android:layout_height="wrap_content"/>
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/arrowone"
+            android:background="#00000000"/>
 
-        <Button
+
+        <ImageButton
             android:id="@+id/btn4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-
-            android:text="geri"
+            android:rotation="180"
             app:layout_constraintStart_toStartOf="@id/btn"
-            app:layout_constraintTop_toBottomOf="@id/btn3" />
+            app:layout_constraintTop_toBottomOf="@id/btn3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/arrowone"
+            android:background="#00000000"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/btn5"
-            android:text="geri"
-            android:layout_width="wrap_content"
             app:layout_constraintStart_toEndOf="@id/btn7"
             app:layout_constraintTop_toTopOf="@id/btn"
-            android:layout_height="wrap_content"/>
-        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/arrowone"
+            android:background="#00000000"/>
+        <ImageButton
             android:id="@+id/btn6"
-            android:text="geri"
             android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
             app:layout_constraintStart_toEndOf="@id/btn5"
             app:layout_constraintTop_toBottomOf="@id/btn5"
-            android:layout_height="wrap_content"/>
-        <Button
+            android:rotation="90"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/arrowone"
+            android:background="#00000000"/>
+        <ImageButton
             android:id="@+id/btn7"
-            android:text="geri"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="100dp"
-            android:layout_width="wrap_content"
+            android:layout_marginStart="200dp"
             app:layout_constraintStart_toEndOf="@id/btn2"
             app:layout_constraintTop_toBottomOf="@id/btn5"
-            android:layout_height="wrap_content"/>
-        <Button
+            android:rotation="270"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/arrowone"
+            android:background="#00000000"/>
+        <ImageButton
             android:id="@+id/btn8"
-            android:text="geri"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
             app:layout_constraintStart_toEndOf="@id/btn7"
             app:layout_constraintTop_toBottomOf="@id/btn7"
-            android:layout_height="wrap_content"/>
+            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:rotation="180"
+            android:scaleType="fitCenter"
+            android:src="@drawable/arrowone"
+            android:background="#00000000"
+            />
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
