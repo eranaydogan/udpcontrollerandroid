@@ -1,5 +1,7 @@
 package com.example.test
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
@@ -62,9 +64,36 @@ class FirstFragment : Fragment() {
 
                     senddatawithloop("btn")
 
+                    v.setBackgroundResource(R.drawable.pressedarrow)
+
+                    val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
+                    val scaleDownY = ObjectAnimator.ofFloat(v, "scaleY", 0.8f)
+                    scaleDownX.duration = 100
+                    scaleDownY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleDownX, scaleDownY)
+                        start()
+                    }
+
+
+
                 }
 
                 MotionEvent.ACTION_UP -> {
+
+                    v.setBackgroundResource(R.drawable.arrowone)
+
+                    val scaleUpX = ObjectAnimator.ofFloat(v, "scaleX", 1f)
+                    val scaleUpY = ObjectAnimator.ofFloat(v, "scaleY", 1f)
+                    scaleUpX.duration = 100
+                    scaleUpY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleUpX, scaleUpY)
+                        start()
+                    }
+
                     jobs["btn"]?.cancel()
                     jobs.remove("btn")
                     v.performClick()
@@ -80,11 +109,32 @@ class FirstFragment : Fragment() {
             Log.i("EVENT",""+event.action)
             when(event.action){
                 MotionEvent.ACTION_DOWN -> {
+                    v.setBackgroundResource(R.drawable.pressedarrow)
+                    val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
+                    val scaleDownY = ObjectAnimator.ofFloat(v, "scaleY", 0.8f)
+                    scaleDownX.duration = 100
+                    scaleDownY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleDownX, scaleDownY)
+                        start()
+                    }
+
 
                     senddatawithloop("btn2")
                 }
 
                 MotionEvent.ACTION_UP -> {
+                    v.setBackgroundResource(R.drawable.arrowone)
+                    val scaleUpX = ObjectAnimator.ofFloat(v, "scaleX", 1f)
+                    val scaleUpY = ObjectAnimator.ofFloat(v, "scaleY", 1f)
+                    scaleUpX.duration = 100
+                    scaleUpY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleUpX, scaleUpY)
+                        start()
+                    }
                     jobs["btn2"]?.cancel()
                     jobs.remove("btn2")
                     v.performClick()
@@ -101,11 +151,33 @@ class FirstFragment : Fragment() {
 
 
                 MotionEvent.ACTION_DOWN -> {
+                    v.setBackgroundResource(R.drawable.pressedarrow)
+                    val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
+                    val scaleDownY = ObjectAnimator.ofFloat(v, "scaleY", 0.8f)
+                    scaleDownX.duration = 100
+                    scaleDownY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleDownX, scaleDownY)
+                        start()
+                    }
+
 
                     senddatawithloop("btn3")
                 }
 
                 MotionEvent.ACTION_UP -> {
+
+                    v.setBackgroundResource(R.drawable.arrowone)
+                    val scaleUpX = ObjectAnimator.ofFloat(v, "scaleX", 1f)
+                    val scaleUpY = ObjectAnimator.ofFloat(v, "scaleY", 1f)
+                    scaleUpX.duration = 100
+                    scaleUpY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleUpX, scaleUpY)
+                        start()
+                    }
                         jobs["btn3"]?.cancel()
                         jobs.remove("btn3")
                         v.performClick()
@@ -122,11 +194,33 @@ class FirstFragment : Fragment() {
 
 
                 MotionEvent.ACTION_DOWN -> {
+                    v.setBackgroundResource(R.drawable.pressedarrow)
+                    val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
+                    val scaleDownY = ObjectAnimator.ofFloat(v, "scaleY", 0.8f)
+                    scaleDownX.duration = 100
+                    scaleDownY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleDownX, scaleDownY)
+                        start()
+                    }
+
 
                     senddatawithloop("btn4")
                 }
 
                 MotionEvent.ACTION_UP -> {
+
+                    v.setBackgroundResource(R.drawable.arrowone)
+                    val scaleUpX = ObjectAnimator.ofFloat(v, "scaleX", 1f)
+                    val scaleUpY = ObjectAnimator.ofFloat(v, "scaleY", 1f)
+                    scaleUpX.duration = 100
+                    scaleUpY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleUpX, scaleUpY)
+                        start()
+                    }
                         jobs["btn4"]?.cancel()
                         jobs.remove("btn4")
                         v.performClick()
@@ -143,10 +237,33 @@ class FirstFragment : Fragment() {
 
                 MotionEvent.ACTION_DOWN -> {
 
+                    v.setBackgroundResource(R.drawable.pressedarrow)
+                    val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
+                    val scaleDownY = ObjectAnimator.ofFloat(v, "scaleY", 0.8f)
+                    scaleDownX.duration = 100
+                    scaleDownY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleDownX, scaleDownY)
+                        start()
+                    }
+
+
                     senddatawithloop("btn5")
                 }
 
                 MotionEvent.ACTION_UP -> {
+
+                    v.setBackgroundResource(R.drawable.arrowone)
+                    val scaleUpX = ObjectAnimator.ofFloat(v, "scaleX", 1f)
+                    val scaleUpY = ObjectAnimator.ofFloat(v, "scaleY", 1f)
+                    scaleUpX.duration = 100
+                    scaleUpY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleUpX, scaleUpY)
+                        start()
+                    }
                     jobs["btn5"]?.cancel()
                     jobs.remove("btn5")
                     v.performClick()
@@ -163,10 +280,33 @@ class FirstFragment : Fragment() {
 
                 MotionEvent.ACTION_DOWN -> {
 
+                    v.setBackgroundResource(R.drawable.pressedarrow)
+                    val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
+                    val scaleDownY = ObjectAnimator.ofFloat(v, "scaleY", 0.8f)
+                    scaleDownX.duration = 100
+                    scaleDownY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleDownX, scaleDownY)
+                        start()
+                    }
+
+
                     senddatawithloop("btn6")
                 }
 
                 MotionEvent.ACTION_UP -> {
+
+                    v.setBackgroundResource(R.drawable.arrowone)
+                    val scaleUpX = ObjectAnimator.ofFloat(v, "scaleX", 1f)
+                    val scaleUpY = ObjectAnimator.ofFloat(v, "scaleY", 1f)
+                    scaleUpX.duration = 100
+                    scaleUpY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleUpX, scaleUpY)
+                        start()
+                    }
                     jobs["btn6"]?.cancel()
                     jobs.remove("btn6")
                     v.performClick()
@@ -183,10 +323,33 @@ class FirstFragment : Fragment() {
 
                 MotionEvent.ACTION_DOWN -> {
 
+                    v.setBackgroundResource(R.drawable.pressedarrow)
+                    val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
+                    val scaleDownY = ObjectAnimator.ofFloat(v, "scaleY", 0.8f)
+                    scaleDownX.duration = 100
+                    scaleDownY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleDownX, scaleDownY)
+                        start()
+                    }
+
+
                     senddatawithloop("btn7")
                 }
 
                 MotionEvent.ACTION_UP -> {
+
+                    v.setBackgroundResource(R.drawable.arrowone)
+                    val scaleUpX = ObjectAnimator.ofFloat(v, "scaleX", 1f)
+                    val scaleUpY = ObjectAnimator.ofFloat(v, "scaleY", 1f)
+                    scaleUpX.duration = 100
+                    scaleUpY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleUpX, scaleUpY)
+                        start()
+                    }
                     jobs["btn7"]?.cancel()
                     jobs.remove("btn7")
                     v.performClick()
@@ -203,10 +366,33 @@ class FirstFragment : Fragment() {
 
                 MotionEvent.ACTION_DOWN -> {
 
+                    v.setBackgroundResource(R.drawable.pressedarrow)
+                    val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
+                    val scaleDownY = ObjectAnimator.ofFloat(v, "scaleY", 0.8f)
+                    scaleDownX.duration = 100
+                    scaleDownY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleDownX, scaleDownY)
+                        start()
+                    }
+
+
                     senddatawithloop("btn8")
                 }
 
                 MotionEvent.ACTION_UP -> {
+
+                    v.setBackgroundResource(R.drawable.arrowone)
+                    val scaleUpX = ObjectAnimator.ofFloat(v, "scaleX", 1f)
+                    val scaleUpY = ObjectAnimator.ofFloat(v, "scaleY", 1f)
+                    scaleUpX.duration = 100
+                    scaleUpY.duration = 100
+
+                    AnimatorSet().apply {
+                        playTogether(scaleUpX, scaleUpY)
+                        start()
+                    }
                     jobs["btn8"]?.cancel()
                     jobs.remove("btn8")
                     v.performClick()
@@ -252,8 +438,6 @@ class FirstFragment : Fragment() {
             "btn8" -> {
                 p -= 0.1f
             }
-
-
             "btn" -> {
                 x += 0.3f*cos(yaw)* cos(pi)
                 y += 0.3f*sin(yaw) * cos(pi)
@@ -262,12 +446,10 @@ class FirstFragment : Fragment() {
             "btn2" -> {
                 x -= 00.0f*sin(yaw)
                 y += 0.10f*cos(yaw)
-
             }
             "btn3" -> {
                 x += 00.0f*sin(yaw)
                 y -= 0.10f*cos(yaw)
-
             }
             "btn4" -> {
                 x -= 0.1f*cos(yaw)* cos(pi)
@@ -285,8 +467,7 @@ class FirstFragment : Fragment() {
                 4f, 5f, 6f, 7f, 8f
             )
 
-            sendUdpData("192.168.142.173", 5555, *randomValues)
-
+            sendUdpData("192.168.79.173", 5555, *randomValues)
 
     }
 
@@ -312,4 +493,3 @@ class FirstFragment : Fragment() {
         _binding = null
     }
 }
-
