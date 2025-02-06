@@ -3,7 +3,11 @@ package com.example.test
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
+import android.os.Build
+import android.os.Vibrator
+import android.os.VibrationEffect
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -57,10 +61,18 @@ class FirstFragment : Fragment() {
         binding.btn.setOnTouchListener { v, event ->
 
             Log.i("EVENT",""+event.action)
+            val vibrator = v.context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
             when(event.action){
 
                 MotionEvent.ACTION_DOWN ->{
+
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        vibrator.vibrate(VibrationEffect.createOneShot(25, VibrationEffect.DEFAULT_AMPLITUDE))
+                    } else {
+                        vibrator.vibrate(25)
+                    }
 
                     senddatawithloop("btn")
 
@@ -105,10 +117,18 @@ class FirstFragment : Fragment() {
           }
 
         binding.btn2.setOnTouchListener { v, event ->
+            val vibrator = v.context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
             Log.i("EVENT",""+event.action)
             when(event.action){
                 MotionEvent.ACTION_DOWN -> {
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        vibrator.vibrate(VibrationEffect.createOneShot(25, VibrationEffect.DEFAULT_AMPLITUDE))
+                    } else {
+                        vibrator.vibrate(25)
+                    }
+
                     v.setBackgroundResource(R.drawable.pressedarrow)
                     val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
                     val scaleDownY = ObjectAnimator.ofFloat(v, "scaleY", 0.8f)
@@ -144,13 +164,20 @@ class FirstFragment : Fragment() {
         }
 
         binding.btn3.setOnTouchListener { v, event ->
+            val vibrator = v.context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
             Log.i("EVENT",""+event.action)
 
             when(event.action) {
 
-
                 MotionEvent.ACTION_DOWN -> {
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        vibrator.vibrate(VibrationEffect.createOneShot(25, VibrationEffect.DEFAULT_AMPLITUDE))
+                    } else {
+                        vibrator.vibrate(25)
+                    }
+
                     v.setBackgroundResource(R.drawable.pressedarrow)
                     val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
                     val scaleDownY = ObjectAnimator.ofFloat(v, "scaleY", 0.8f)
@@ -187,6 +214,7 @@ class FirstFragment : Fragment() {
         }
 
         binding.btn4.setOnTouchListener { v, event ->
+            val vibrator = v.context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
             Log.i("EVENT",""+event.action)
 
@@ -194,6 +222,13 @@ class FirstFragment : Fragment() {
 
 
                 MotionEvent.ACTION_DOWN -> {
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        vibrator.vibrate(VibrationEffect.createOneShot(25, VibrationEffect.DEFAULT_AMPLITUDE))
+                    } else {
+                        vibrator.vibrate(25)
+                    }
+
                     v.setBackgroundResource(R.drawable.pressedarrow)
                     val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
                     val scaleDownY = ObjectAnimator.ofFloat(v, "scaleY", 0.8f)
@@ -229,6 +264,7 @@ class FirstFragment : Fragment() {
             true
         }
         binding.btn5.setOnTouchListener { v, event ->
+            val vibrator = v.context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
             Log.i("EVENT",""+event.action)
 
@@ -236,6 +272,12 @@ class FirstFragment : Fragment() {
 
 
                 MotionEvent.ACTION_DOWN -> {
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        vibrator.vibrate(VibrationEffect.createOneShot(25, VibrationEffect.DEFAULT_AMPLITUDE))
+                    } else {
+                        vibrator.vibrate(25)
+                    }
 
                     v.setBackgroundResource(R.drawable.pressedarrow)
                     val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
@@ -272,6 +314,7 @@ class FirstFragment : Fragment() {
             true
         }
         binding.btn6.setOnTouchListener { v, event ->
+            val vibrator = v.context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
             Log.i("EVENT",""+event.action)
 
@@ -279,6 +322,12 @@ class FirstFragment : Fragment() {
 
 
                 MotionEvent.ACTION_DOWN -> {
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        vibrator.vibrate(VibrationEffect.createOneShot(25, VibrationEffect.DEFAULT_AMPLITUDE))
+                    } else {
+                        vibrator.vibrate(25)
+                    }
 
                     v.setBackgroundResource(R.drawable.pressedarrow)
                     val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
@@ -315,6 +364,7 @@ class FirstFragment : Fragment() {
             true
         }
         binding.btn7.setOnTouchListener { v, event ->
+            val vibrator = v.context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
             Log.i("EVENT",""+event.action)
 
@@ -322,6 +372,13 @@ class FirstFragment : Fragment() {
 
 
                 MotionEvent.ACTION_DOWN -> {
+
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        vibrator.vibrate(VibrationEffect.createOneShot(25, VibrationEffect.DEFAULT_AMPLITUDE))
+                    } else {
+                        vibrator.vibrate(25)
+                    }
 
                     v.setBackgroundResource(R.drawable.pressedarrow)
                     val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
@@ -358,6 +415,7 @@ class FirstFragment : Fragment() {
             true
         }
         binding.btn8.setOnTouchListener { v, event ->
+            val vibrator = v.context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
             Log.i("EVENT",""+event.action)
 
@@ -365,6 +423,12 @@ class FirstFragment : Fragment() {
 
 
                 MotionEvent.ACTION_DOWN -> {
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        vibrator.vibrate(VibrationEffect.createOneShot(25, VibrationEffect.DEFAULT_AMPLITUDE))
+                    } else {
+                        vibrator.vibrate(25)
+                    }
 
                     v.setBackgroundResource(R.drawable.pressedarrow)
                     val scaleDownX = ObjectAnimator.ofFloat(v, "scaleX", 0.8f)
