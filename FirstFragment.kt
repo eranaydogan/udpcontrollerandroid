@@ -4,6 +4,7 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.content.Context
+import android.net.Uri
 import android.os.Bundle
 import android.os.Build
 import android.os.Vibrator
@@ -14,7 +15,13 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.OptIn
 import androidx.lifecycle.lifecycleScope
+import androidx.media3.common.MediaItem
+import androidx.media3.common.Player
+import androidx.media3.common.util.UnstableApi
+import androidx.media3.exoplayer.ExoPlayer
+import androidx.media3.exoplayer.rtsp.RtspMediaSource
 import com.example.test.databinding.FragmentFirstBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -34,6 +41,8 @@ class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
+    private lateinit var player: ExoPlayer
+
 
     // Değişkenleri sınıf seviyesinde tanımla (her butona basıldığında artmaya devam edecek)
     private var x = 0.0f
@@ -56,6 +65,9 @@ class FirstFragment : Fragment() {
     @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+
 
 
         binding.btn.setOnTouchListener { v, event ->
@@ -464,7 +476,22 @@ class FirstFragment : Fragment() {
             }
             true
         }
+        setupPlayer()
+    }
 
+    @OptIn(UnstableApi::class) private fun setupPlayer() {
+        player = ExoPlayer.Builder(requireContext()).build()
+        binding.playerView.player = player as Player
+
+        val videoUri = Uri.parse("rtsp://10.248.226.236:8554/mystream") // PC'nin RTSP yayın adresi
+        val mediaItem = MediaItem.fromUri(videoUri)
+
+        // RTSP medya kaynağı oluştur
+        val mediaSource = RtspMediaSource.Factory().createMediaSource(mediaItem)
+
+        player.setMediaSource(mediaSource)
+        player.prepare()
+        player.play()
     }
 
     fun senddatawithloop(buttonname: String) {

@@ -10,20 +10,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <androidx.media3.ui.PlayerView
+                android:id="@+id/playerView"
+                app:use_controller="false"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
 
         <ImageButton
             android:id="@+id/btn"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:background="#00000000"
             android:scaleType="fitCenter"
             android:src="@drawable/arrowone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.182"
+            app:layout_constraintHorizontal_bias="0.114"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.175" />
+            app:layout_constraintVertical_bias="0.501" />
 
         <ImageButton
             android:id="@+id/btn2"
@@ -31,8 +48,8 @@
             app:layout_constraintStart_toEndOf="@id/btn"
             app:layout_constraintTop_toBottomOf="@id/btn"
             android:rotation="90"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:scaleType="fitCenter"
             android:src="@drawable/arrowone"
             android:background="#00000000"/>
@@ -42,8 +59,8 @@
             android:rotation="270"
             app:layout_constraintEnd_toStartOf="@id/btn"
             app:layout_constraintTop_toBottomOf="@id/btn"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:scaleType="fitCenter"
             android:src="@drawable/arrowone"
             android:background="#00000000"/>
@@ -55,8 +72,8 @@
             android:rotation="180"
             app:layout_constraintStart_toStartOf="@id/btn"
             app:layout_constraintTop_toBottomOf="@id/btn3"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:scaleType="fitCenter"
             android:src="@drawable/arrowone"
             android:background="#00000000"/>
@@ -65,8 +82,8 @@
             android:id="@+id/btn5"
             app:layout_constraintStart_toEndOf="@id/btn7"
             app:layout_constraintTop_toTopOf="@id/btn"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:scaleType="fitCenter"
             android:src="@drawable/arrowone"
             android:background="#00000000"/>
@@ -76,20 +93,20 @@
             app:layout_constraintStart_toEndOf="@id/btn5"
             app:layout_constraintTop_toBottomOf="@id/btn5"
             android:rotation="90"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:scaleType="fitCenter"
             android:src="@drawable/arrowone"
             android:background="#00000000"/>
         <ImageButton
             android:id="@+id/btn7"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="200dp"
+            android:layout_marginStart="350dp"
             app:layout_constraintStart_toEndOf="@id/btn2"
             app:layout_constraintTop_toBottomOf="@id/btn5"
             android:rotation="270"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:scaleType="fitCenter"
             android:src="@drawable/arrowone"
             android:background="#00000000"/>
@@ -98,8 +115,8 @@
             app:layout_constraintStart_toEndOf="@id/btn7"
             app:layout_constraintTop_toBottomOf="@id/btn7"
             android:layout_marginTop="10dp"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:rotation="180"
             android:scaleType="fitCenter"
             android:src="@drawable/arrowone"
