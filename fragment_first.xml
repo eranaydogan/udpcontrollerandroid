@@ -19,12 +19,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             >
 
-            <androidx.media3.ui.PlayerView
-                android:id="@+id/playerView"
-                app:use_controller="false"
-
+            <org.videolan.libvlc.util.VLCVideoLayout
+                android:id="@+id/vlcVideo"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"/>
 
         </FrameLayout>
 

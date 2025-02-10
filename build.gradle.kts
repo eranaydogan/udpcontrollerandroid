@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation (libs.androidx.appcompat)
+    implementation("org.videolan.android:libvlc-all:3.6.0")
     implementation(libs.exoPlayer)
     implementation (libs.androidx.media3.exoplayer)
     implementation (libs.androidx.media3.exoplayer.rtsp) // RTSP desteği için

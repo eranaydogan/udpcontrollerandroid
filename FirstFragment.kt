@@ -36,12 +36,19 @@ import java.nio.ByteOrder
 import java.lang.Math.toRadians
 import kotlin.math.cos
 import kotlin.math.sin
+import org.videolan.libvlc.LibVLC
+import org.videolan.libvlc.Media
+import org.videolan.libvlc.MediaPlayer
+import org.videolan.libvlc.interfaces.IVLCVout
+
 
 class FirstFragment : Fragment() {
 
+    private lateinit var libVLC: LibVLC
+    private lateinit var mediaPlayer: MediaPlayer
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
-    private lateinit var player: ExoPlayer
+
 
 
     // Değişkenleri sınıf seviyesinde tanımla (her butona basıldığında artmaya devam edecek)
@@ -65,6 +72,7 @@ class FirstFragment : Fragment() {
     @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
 
 
@@ -476,22 +484,24 @@ class FirstFragment : Fragment() {
             }
             true
         }
-        setupPlayer()
+        setupVLCPlayer()
+
     }
 
-    @OptIn(UnstableApi::class) private fun setupPlayer() {
-        player = ExoPlayer.Builder(requireContext()).build()
-        binding.playerView.player = player as Player
+    private fun setupVLCPlayer() {
+        libVLC = LibVLC(requireContext(), arrayListOf("--no-drop-late-frames", "--no-skip-frames"))
+        mediaPlayer = MediaPlayer(libVLC)
+        mediaPlayer.attachViews(binding.vlcVideo, null, false, false)
 
-        val videoUri = Uri.parse("rtsp://10.248.226.236:8554/mystream") // PC'nin RTSP yayın adresi
-        val mediaItem = MediaItem.fromUri(videoUri)
+        // Örnek bir video URL'si ile medya oluştur
+        val media = Media(libVLC, Uri.parse("udp://@:1234"))
+        media.setHWDecoderEnabled(true, false)
+        media.addOption(":network-caching=600")
+        mediaPlayer.media = media
+        media.release()
 
-        // RTSP medya kaynağı oluştur
-        val mediaSource = RtspMediaSource.Factory().createMediaSource(mediaItem)
-
-        player.setMediaSource(mediaSource)
-        player.prepare()
-        player.play()
+        // Oynatmayı başlat
+        mediaPlayer.play()
     }
 
     fun senddatawithloop(buttonname: String) {
@@ -580,6 +590,8 @@ class FirstFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        mediaPlayer.release()
+        libVLC.release()
         super.onDestroyView()
         _binding = null
     }
