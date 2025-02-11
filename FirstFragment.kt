@@ -568,7 +568,7 @@ class FirstFragment : Fragment() {
                 4f, 5f, 6f, 7f, 8f
             )
 
-            sendUdpData("192.168.79.173", 5555, *randomValues)
+            sendUdpData("192.168.137.1", 5555, *randomValues)
 
     }
 
